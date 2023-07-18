@@ -1,16 +1,21 @@
 package com.skillsoft.inheritanceandinterfaces;
 
-public class Lamborghini implements SportsCar {
+//public class Lamborghini implements SportsCar {
+public class Lamborghini implements SportsCar, Automobile {
 
     private String make;
     private String model;
     private Double price;
 
-    public Lamborghini(String model, Double price) {
+    private float topSpeed;
+
+    public Lamborghini(String model, Double price, float topSpeed) {
         this.make = "Lamborghini";
 
         this.model = model;
         this.price = price;
+
+        this.topSpeed = topSpeed;
     }
 
     @Override
@@ -29,7 +34,13 @@ public class Lamborghini implements SportsCar {
     }
 
     @Override
+    public float getTopSpeed() {
+        return topSpeed;
+    }
+
+    @Override
     public String toString() {
-        return String.format("Make: %s, Model: %s, Price: %s", make, model, price);
+        return String.format("Make: %s, Model: %s, Price: %s, Top speed: %.1f",
+                make, model, price, topSpeed);
     }
 }

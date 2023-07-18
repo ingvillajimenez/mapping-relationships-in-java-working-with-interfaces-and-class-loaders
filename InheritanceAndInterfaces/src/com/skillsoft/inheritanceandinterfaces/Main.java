@@ -4,19 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        Automobile honda = new Sedan("Honda", "Civic", 21000.0);
-//        System.out.println("Honda safety program: " + honda.safetyAssessmentProgram);
-//
-//        Automobile toyota = new Sedan("Toyota", "Carmy", 25000.0);
-//        System.out.println("Toyota safety program: " + toyota.safetyAssessmentProgram);
-//
-//        System.out.println("Automobile safety program: " + Automobile.safetyAssessmentProgram);
-//        System.out.println("Sedan safety program: " + Sedan.safetyAssessmentProgram);
-//
-//        Automobile.safetyAssessmentProgram = "Euro NACP";
-
-        Automobile huracan = new Lamborghini("Huracan", 78000.0);
-        SportsCar aventador = new Lamborghini("Aventador", 127000.0);
+        Automobile huracan = new Lamborghini("Huracan", 78000.0, 320);
+        SportsCar aventador = new Lamborghini("Aventador", 127000.0, 350);
 
         System.out.println("Huracan: " + huracan);
         System.out.println("Aventador: " + aventador);
