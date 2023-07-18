@@ -1,29 +1,48 @@
 package com.skillsoft.reflection;
 
-//import java.net.http.HttpClient;
+import org.json.JSONObject;
+
 import java.sql.ResultSet;
-import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
 
-        System.out.println("-- System or Application class loader");
-        System.out.println("Employee class loader: " + Employee.class.getClassLoader());
-        System.out.println();
+//        System.out.println("-- System or Application class loader");
+//        System.out.println("JSONObject class loader: " + JSONObject.class.getClassLoader());
+//        System.out.println();
 
-        System.out.println("-- Platform class loader");
-        System.out.println("ResultSet class loader: " + ResultSet.class.getClassLoader());
-//        System.out.println("HttpClient class loader: " + HttpClient.class.getClassLoader());
-        System.out.println();
+//        System.out.println("****** Bootstrap root of class loader hierarchy");
+//        ClassLoader bootstrapClassLoader = String.class.getClassLoader();
+//        System.out.println("Bootstrap class loader: " + bootstrapClassLoader);
+//
+//        System.out.println();
+//
+//        System.out.println("****** Platform class loader hierarchy");
+//        ClassLoader platformClassLoader = ResultSet.class.getClassLoader();
+//        System.out.println("Platform class loader: " + platformClassLoader);
+//
+//        System.out.println("Platform class loader (parent): " + platformClassLoader.getParent());
+//
+//        System.out.println();
+//
+//        System.out.println("****** Application class loader hierarchy");
+//        ClassLoader applicationClassLoader = Employee.class.getClassLoader();
+//        System.out.println("Application class loader: " + applicationClassLoader);
+//
+//        System.out.println("Application class loader (parent): " +
+//                applicationClassLoader.getParent());
+//        System.out.println("Application class loader (parent -> parent): " +
+//                applicationClassLoader.getParent().getParent());
 
-        System.out.println("--Bootstrap class loader");
-        System.out.println("Math class loader: " + Math.class.getClassLoader());
-        System.out.println("ArrayList class loader: " + ArrayList.class.getClassLoader());
-        System.out.println();
+        Class<?> someClass = Class.forName("com.skillsoft.reflection.Department",
+                true, Employee.class.getClassLoader());
 
     }
 }
 
 // https://docs.oracle.com/javase/9/docs/api/java/lang/ClassLoader.html
 // Java docs for java.lang.ClassLoader
+
+// https://github.com/stleary/JSON-java
+// URL for an external JAR file that we will try to load
