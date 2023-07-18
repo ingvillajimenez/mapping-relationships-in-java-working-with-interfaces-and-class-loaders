@@ -19,6 +19,9 @@ public class Sedan implements Automobile {
 
     @Override
     public String getModel() {
+//    private String getModel() {
+//    protected String getModel() {
+//    String getModel() {
         return model;
     }
 
