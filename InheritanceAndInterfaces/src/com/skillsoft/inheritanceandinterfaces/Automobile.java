@@ -1,5 +1,7 @@
 package com.skillsoft.inheritanceandinterfaces;
 
+import java.util.Calendar;
+
 public interface Automobile {
 
     // NOTE: All methods in an interface are public and abstract by default
@@ -12,5 +14,17 @@ public interface Automobile {
     String getModel();
 
     Double getPrice();
+
+    static String getFormattedCalendarString() {
+        Calendar now = Calendar.getInstance();
+
+        return String.format("%s-%s-%s", now.get(Calendar.MONTH),
+                now.get(Calendar.DAY_OF_MONTH), now.get(Calendar.YEAR));
+    }
+
+//    String getReleaseDate();
+    default String getReleaseDate() {
+        return getFormattedCalendarString();
+    }
 
 }
